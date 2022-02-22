@@ -33,6 +33,7 @@ dill==0.3.4
 duet==0.2.3
 entrypoints==0.4
 executing==0.8.2
+fastdtw==0.3.4
 flatbuffers==2.0
 fonttools==4.29.1
 gast==0.5.3
@@ -144,6 +145,7 @@ qiskit==0.34.1
 qiskit-aer==0.10.2
 qiskit-ibmq-provider==0.18.3
 qiskit-ignis==0.7.0
+qiskit-machine-learning==0.3.1
 qiskit-terra==0.19.1
 qtconsole==5.2.2
 QtPy==2.0.1
