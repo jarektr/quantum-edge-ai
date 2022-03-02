@@ -159,7 +159,6 @@ qiskit==0.34.1
 qiskit-aer==0.10.2
 qiskit-aqua==0.9.5
 qiskit-experiments==0.2.0
-qiskit-finance==0.3.1
 qiskit-ibmq-provider==0.18.3
 qiskit-ignis==0.7.0
 qiskit-machine-learning==0.3.1
