@@ -1,0 +1,12 @@
+(vitis-ai-tensorflow2) Vitis-AI /workspace > python3 dpu.py
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+F0314 11:56:00.196981   111 dpu_runner.cpp:152] [UNILOG][FATAL][VART_RUNNER_CONSTRUCTION_FAIL][Cannot create runner] Cannot find runner for mode ! subgraph name: subgraph_quant_dense_2(TransferMatMulToConv2d)
+*** Check failure stack trace: ***
+Aborted (core dumped)
+(vitis-ai-tensorflow2) Vitis-AI /workspace > 
+ 
+(vitis-ai-tensorflow2) Vitis-AI /workspace > python3 dpu.py
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+F0314 12:25:19.784538   143 dpu_controller.cpp:44] Check failed: !the_factory_methods.empty() 
+*** Check failure stack trace: ***
+Aborted (core dumped)

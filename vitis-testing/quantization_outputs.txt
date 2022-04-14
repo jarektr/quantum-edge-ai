@@ -1,0 +1,142 @@
+(vitis-ai-tensorflow2) Vitis-AI /workspace > import pandas
+bash: import: command not found
+(vitis-ai-tensorflow2) Vitis-AI /workspace > python3
+Python 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:53) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> import pandas tensorflow
+  File "<stdin>", line 1
+    import pandas tensorflow
+                           ^
+SyntaxError: invalid syntax
+>>> import pandas as pd
+>>> import tensorflow as tf
+2022-03-09 10:43:46.605691: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/xilinx/xrt/lib:/usr/lib:/usr/lib/x86_64-linux-gnu:/usr/local/lib:/opt/vitis_ai/conda/envs/vitis-ai-tensorflow/lib
+2022-03-09 10:43:46.605707: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+>>> 
+>>> from tensorflow_model_optimziation_quantization.keras import vitis_quantize
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'tensorflow_model_optimziation_quantization'
+>>> from tensorflow_model_optimization.quantization.keras import vitis_quantize
+>>> model = tf.keras.models.load_model('repo/classic_mlp_trained_model_qd.h5')
+2022-03-09 10:48:57.227463: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/xilinx/xrt/lib:/usr/lib:/usr/lib/x86_64-linux-gnu:/usr/local/lib:/opt/vitis_ai/conda/envs/vitis-ai-tensorflow/lib
+2022-03-09 10:48:57.227484: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-03-09 10:48:57.227499: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] no NVIDIA GPU device is present: /dev/nvidia0 does not exist
+2022-03-09 10:48:57.227655: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+>>> model.summary()
+Model: "test_model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 2)]               0         
+_________________________________________________________________
+dense (Dense)                (None, 8)                 24        
+_________________________________________________________________
+dense_1 (Dense)              (None, 8)                 72        
+_________________________________________________________________
+dense_2 (Dense)              (None, 1)                 9         
+=================================================================
+Total params: 105
+Trainable params: 105
+Non-trainable params: 0
+_________________________________________________________________
+>>> 
+>>> data = pd.read_csv('repo/Direct_Kernel_Set_I_Classifications.csv')
+>>> quantizer = vitis_quantize.VitisQuantizer(model)
+[VAI INFO] Update custom_layer_type: []
+>>> quantized_model = quantizer.quantize_model(data[, 1:3])
+  File "<stdin>", line 1
+    quantized_model = quantizer.quantize_model(data[, 1:3])
+                                                    ^
+SyntaxError: invalid syntax
+>>> quantized_model = quantizer.quantize_model(data.iloc[, 1:3])
+  File "<stdin>", line 1
+    quantized_model = quantizer.quantize_model(data.iloc[, 1:3])
+                                                         ^
+SyntaxError: invalid syntax
+>>> quantized_model = quantizer.quantize_model(data.iloc[:, 1:3])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/opt/vitis_ai/conda/envs/vitis-ai-tensorflow2/lib/python3.7/site-packages/tensorflow_model_optimization/python/core/quantization/keras/vitis/vitis_quantize.py", line 549, in quantize_model
+    'Need to assign `calib_dataset` for when calling quantize_model().')
+  File "/opt/vitis_ai/conda/envs/vitis-ai-tensorflow2/lib/python3.7/site-packages/tensorflow_model_optimization/python/core/quantization/keras/vitis/utils/common_utils.py", line 75, in error
+    raise err_type('[VAI ERROR] ' + msg)
+ValueError: [VAI ERROR] Need to assign `calib_dataset` for when calling quantize_model().
+>>> quantized_model = quantizer.quantize_model(calib_dataset=data.iloc[:, 1:3])
+[VAI INFO] Start CrossLayerEqualization...
+10/10 [==============================] - 0s 21ms/step
+[VAI INFO] CrossLayerEqualization Done.
+[VAI INFO] Start Quantize Calibration...
+2022-03-09 10:52:29.990556: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
+14/14 [==============================] - 1s 2ms/step
+[VAI INFO] Quantize Calibration Done.
+[VAI INFO] Start Post-Quantize Adjustment...
+[VAI INFO] Post-Quantize Adjustment Done.
+[VAI INFO] Quantization Finished.
+>>> quantized_model.save('repo/quantized_model.h5')
+WARNING:tensorflow:Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+>>> quantized_model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(),
+        metrics= keras.metrics.SparseTopKCategoricalAccuracy())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'keras' is not defined
+>>> import keras
+>>> quantized_model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(),
+        metrics= keras.metrics.SparseTopKCategoricalAccuracy())
+>>> quantized_model.evaluate(data.iloc[:, 1:3])
+ 1/14 [=>............................] - ETA: 1s - loss: 0.0000e+00 - sparse_top_k_categorical_accur14/14 [==============================] - 0s 663us/step - loss: 0.0000e+00 - sparse_top_k_categorical_accuracy: 0.0000e+00
+[0.0, 0.0]
+>>> vitis_quantize.VitisQuantizer.dump_model(quantized_model, 
+                                         data.iloc[:, 1:3], 
+                                         output_dir='repo/dump_results') 
+[VAI INFO] Start Dumping...
+[VAI INFO] Dumping weights/biases...
+[VAI INFO] Dumping (1/6): quant_dense/kernel
+[VAI INFO] Dumping (2/6): quant_dense/bias
+[VAI INFO] Dumping (3/6): quant_dense_1/kernel
+[VAI INFO] Dumping (4/6): quant_dense_1/bias
+[VAI INFO] Dumping (5/6): quant_dense_2/kernel
+[VAI INFO] Dumping (6/6): quant_dense_2/bias
+[VAI INFO] Dumping activations...
+[VAI INFO] Dumping (1/7): quant_input_1
+[VAI INFO] Dumping (2/7): quant_dense
+[VAI INFO] Dumping (3/7): quant_dense_sigmoid_sigmoid
+[VAI INFO] Dumping (4/7): quant_dense_1
+[VAI INFO] Dumping (5/7): quant_dense_1_sigmoid_sigmoid
+[VAI INFO] Dumping (6/7): quant_dense_2
+[VAI INFO] Dumping (7/7): quant_dense_2_sigmoid_sigmoid
+>>> 
+

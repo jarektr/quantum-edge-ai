@@ -1,0 +1,17 @@
+freeze_graph --input_graph=./train/tf_complete_model.pb \
+--input_checkpoint=./tfchkpt.ckpt \
+--input_binary=true \
+--output_graph=./freeze/frozen_graph.pb \
+--output_node_names=dense_3/Sigmoid
+
+
+
+
+vai_q_tensorflow quantize \
+--input_frozen_graph=./freeze/frozen_graph.pb \
+--input_nodes=input_1 \
+--input_shapes=?,2,1,1 \
+--output_nodes=dense_3/Sigmoid \
+--input_fn=quantize.calib_input \
+--output_dir=quantize \
+--calib_iter=100
