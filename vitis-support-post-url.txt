@@ -1,1 +1,0 @@
-https://support.xilinx.com/s/question/0D52E000073wxTdSAI/unable-to-create-a-runner-for-hardware-emulation-using-vitisai-2001103-cpu-and-tensorflow2?language=en_US&t=1647608876546
