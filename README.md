@@ -31,4 +31,17 @@ the MNIST dataset, and the Qiskit ad_hoc dataset.<br><br>
 # <ins>Data</ins>
 Quantum Dataset, Source:[ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1).<br>
 MNIST Dataset, Source:[ The MNIST Database Of Handwritten Digits](http://yann.lecun.com/exdb/mnist/).<br>
-AD_HOC Dataset, Source:[ qiskit_machine_learning.datasets.ad_hoc ](https://qiskit.org/documentation/machine-learning/_modules/qiskit_machine_learning/datasets/ad_hoc.html).
+AD_HOC Dataset, Source:[ qiskit_machine_learning.datasets.ad_hoc ](https://qiskit.org/documentation/machine-learning/_modules/qiskit_machine_learning/datasets/ad_hoc.html).<br><br>
+
+# <ins>Technical Challenges</ins>
+* Vitis hardware emulation is not well documented.<br>
+
+* Qiskit documentation for certain workflows is scarce.<br>
+
+* Vitis AI does not currently support Scikit Learn workflows.<br>
+
+* Transitioning from classical models to quantum models, while trying best 
+to maintain similarity between layers proved challenging.<br>
+
+* Vitis AI does not currently support deep learning processor unit (DPU) hardware 
+emulation, which prevented us from reaching our final deliverable.
