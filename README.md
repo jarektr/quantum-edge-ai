@@ -9,7 +9,7 @@ trained models will be used for inference on the emulator. <br>
 
 We trained our models across three datasets. The quantum dataset used in the
 paper [ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1),
-the MNIST Dataset, and the Qiskit ad_hoc dataset.<br><br>
+the MNIST dataset, and the Qiskit ad_hoc dataset.<br><br>
 # <ins>Structure</ins>
 `administration/`: Contains status reports and time sheets for project status tracking.<br>
 `data/`: Quantum training data. Source:[ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1).<br>
