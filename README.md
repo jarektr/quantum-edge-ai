@@ -40,8 +40,8 @@ AD_HOC Dataset, Source:[ qiskit_machine_learning.datasets.ad_hoc ](https://qiski
 
 * Vitis AI does not currently support Scikit Learn workflows.<br>
 
-* Transitioning from classical models to quantum models, while trying best 
-to maintain similarity between layers proved challenging.<br>
-
 * Vitis AI does not currently support deep learning processor unit (DPU) hardware 
-emulation, which prevented us from reaching our final deliverable.
+emulation. [ Source](https://support.xilinx.com/s/question/0D52E000073wxTdSAI/unable-to-create-a-runner-for-hardware-emulation-using-vitisai-2001103-cpu-and-tensorflow2?language=en_US&t=1647608876546).<br>
+
+* Transitioning from classical models to quantum models, while trying best 
+to maintain similarity between layers proved challenging.
