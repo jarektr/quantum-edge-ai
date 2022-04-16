@@ -22,11 +22,11 @@ the MNIST dataset, and the Qiskit ad_hoc dataset.<br><br>
 
 
 # <ins>Jupyter Notebooks</ins>
-`CMLP_Analysis.ipynb`: Analysis of classical MLPs across all three datasets.<br>
-`CSVM_Analysis.ipynb`: Analysis of classical SVM's across all three datasets.<br>
+`C_MLP_Analysis.ipynb`: Analysis of classical MLPs across all three datasets.<br>
+`C_SVM_Analysis.ipynb`: Analysis of classical SVM's across all three datasets.<br>
 `Initial_Notebook.ipynb`: Initial notebook for loading the quantum datset.<br>
-`QMLP_Analysis.ipynb`: Analysis of quantum MLPs across all three datasets.<br>
-`QSVM_Analysis.ipynb`:Analysis of quantum SVMs across all three datasets.<br><br>
+`Q_MLP_Analysis.ipynb`: Analysis of quantum MLPs across all three datasets.<br>
+`Q_SVM_Analysis.ipynb`:Analysis of quantum SVMs across all three datasets.<br><br>
 
 # <ins>Data</ins>
 Quantum Dataset, Source:[ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1).<br>
