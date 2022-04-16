@@ -5,11 +5,11 @@ classifiers are deployable on edge processors for inference. The goal of this
 project was to apply Quantum AI to train a simple classifier network and then 
 use that network for inference on an emulated embedded platform. If the quantum 
 piece does not show improvement over traditional techniques, then traditionally 
-trained models will be used for inference on the emulator. <br><br>
+trained models will be used for inference on the emulator. <br>
 
 We trained our models across three datasets. The quantum dataset used in the
 paper [ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1),
-the MNIST Dataset, and the Qiskit ad_hoc dataset via `qiskit_machine_learning.datasets.ad_hoc`.
+the MNIST Dataset, and the Qiskit ad_hoc dataset.<br><br>
 # <ins>Structure</ins>
 `administration/`: Contains status reports and time sheets for project status tracking.<br>
 `data/`: Quantum training data. Source:[ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1).<br>
