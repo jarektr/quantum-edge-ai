@@ -9,7 +9,8 @@ trained models will be used for inference on the emulator. <br>
 
 We trained our models across three datasets. The quantum dataset used in the
 paper [ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1),
-the MNIST dataset, and the Qiskit ad_hoc dataset.<br>
+the MNIST dataset, and the Qiskit ad_hoc dataset.<br><br>
+
 
 ## Team:
 * [Adam Hoerger](https://github.com/adamhoerger) - Software Engineer
@@ -21,6 +22,8 @@ the MNIST dataset, and the Qiskit ad_hoc dataset.<br>
 * [Jorge Ortiz](https://github.com/joor2163) - Software Engineer
 * [Noah Svensson](https://github.com/Gholion) - Software Engineer
 <br><br>
+
+
 # <ins>Structure</ins>
 `administration/`: Contains status reports and time sheets for project status tracking.<br>
 `data/`: Quantum training data. Source:[ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1).<br>
@@ -39,10 +42,12 @@ the MNIST dataset, and the Qiskit ad_hoc dataset.<br>
 `Q_MLP_Analysis.ipynb`: Analysis of quantum MLPs across all three datasets.<br>
 `Q_SVM_Analysis.ipynb`:Analysis of quantum SVMs across all three datasets.<br><br>
 
+
 # <ins>Data</ins>
 Quantum Dataset, Source:[ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1).<br>
 MNIST Dataset, Source:[ The MNIST Database Of Handwritten Digits](http://yann.lecun.com/exdb/mnist/).<br>
 AD_HOC Dataset, Source:[ qiskit_machine_learning.datasets.ad_hoc ](https://qiskit.org/documentation/machine-learning/_modules/qiskit_machine_learning/datasets/ad_hoc.html).<br><br>
+
 
 # <ins>Technical Challenges</ins>
 * Vitis hardware emulation is not well documented.<br>
