@@ -46,7 +46,7 @@ the MNIST dataset, and the Qiskit ad_hoc dataset.<br><br>
 # <ins>Data</ins>
 Quantum Dataset, Source:[ Supervised Learning With Quantum-Enhanced Feature Spaces](https://www.nature.com/articles/s41586-019-0980-2#MOESM1).<br>
 MNIST Dataset, Source:[ The MNIST Database Of Handwritten Digits](http://yann.lecun.com/exdb/mnist/).<br>
-AD_HOC Dataset, Source:[ qiskit_machine_learning.datasets.ad_hoc ](https://qiskit.org/documentation/machine-learning/_modules/qiskit_machine_learning/datasets/ad_hoc.html).<br><br>
+AD_HOC Dataset, Source:[ qiskit_machine_learning.datasets.ad_hoc](https://qiskit.org/documentation/machine-learning/_modules/qiskit_machine_learning/datasets/ad_hoc.html).<br><br>
 
 
 # <ins>Technical Challenges</ins>
