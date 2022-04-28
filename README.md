@@ -1,7 +1,7 @@
 # <ins>Overview</ins>
 ### 2021 - 2022 CU Boulder Engineering Capstone - Sponsored by Northrop Grumman.<br>
 Simple classifiers are starting to show promise on quantum processors, and these 
-classifiers are deployable on edge processors for inference. The goal of this 
+classifiers are deployable on edge nodes for inference. The goal of this 
 project was to apply Quantum AI to train a simple classifier network and then 
 use that network for inference on an emulated embedded platform. If the quantum 
 piece does not show improvement over traditional techniques, then traditionally 
