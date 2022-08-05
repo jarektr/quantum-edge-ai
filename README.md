@@ -17,7 +17,7 @@ the MNIST dataset, and the Qiskit ad_hoc dataset.<br><br>
 * [Alan Yu](https://github.com/huaaoyu) - Software Engineer
 * [Cade Gorman](https://github.com/cgorman-cu) - Software Engineer
 * [Giovanni Visco](https://github.com/givi0519) - Software Engineer
-* [Jarek Smith](https://github.com/JarekTS) - Project & Repo Manager
+* [Jarek Reynolds](https://github.com/JarekTS) - Project & Repo Manager
 * [John Ortiz](https://github.com/OrtizJohn) - Software Engineer
 * [Jorge Ortiz](https://github.com/joor2163) - Software Engineer
 * [Noah Svensson](https://github.com/Gholion) - Software Engineer
